@@ -10,13 +10,16 @@ fun main() {
         doc.body {
             h1().text("Hello World!")
 
-            val name = KVar("John")
-            li().text(name)
-//            p().text("What is your name?")
-//            val input = input(type = text)
-//            val nameKVar = KVar("Peter Pan")
-//            input.value = nameKVar
-//            p().text(nameKVar.map { n -> "Hi $n!" })
+            val label = h1()
+            label.text("Click Me")
+            label.on.click {
+                label.text("Clicked!")
+            }
+
+            val clickMe = input(type = InputType.text)
+            val nameKVar = KVar("Peter Pan")
+            clickMe.value = nameKVar
+            p().text(nameKVar.map { n -> "Hi $n!" })
 
             render(list) { rList ->
                 ul {
@@ -27,7 +30,7 @@ fun main() {
             }
         }
     }
-    renderLoop(list)
+//    renderLoop(list)
 }
 
 private fun renderLoop(list: KVar<List<String>>) {

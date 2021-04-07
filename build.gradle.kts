@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.kwebio:kweb-core:0.8.8")
+    implementation("com.github.kwebio:kweb-core:0.8.5")
     implementation("org.slf4j:slf4j-simple:1.7.30")
 
     testImplementation(kotlin("test-testng"))
